@@ -67,6 +67,7 @@ function inning(){
 }
 
 
+
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
 Use the finalScore function below to do the following:
   1. Receive the callback function `inning` that was created in Task 2 
@@ -82,30 +83,33 @@ Use the finalScore function below to do the following:
 */ 
 
 function finalScore(inningcb, num){
-  const score = {
+  let score = {
     Home:0,
     Away:0,
   };
 
   
   for(let i=0;i<num;i++){
-    score.Home = score.Home+inningcb()
-    score.Away = score.Away+inningcb();
+    score.Home = score.Home+inning()
+    score.Away = score.Away+inning();
   }
   
   return score;
 }
 
-
+console.log(finalScore(inning(), 9)); 
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
-function getInningScore(innincb) {
-  return finalScore(innincb,9);
+function getInningScore(inningcb) {
+  return finalScore(inningcb,1);
 }
+
+
+
 
 
 /* ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
@@ -149,9 +153,32 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(getInningScorecb, inningcb, num) {
+  let scoreArr = [];
+
+  let homeScore = 0;
+  let awayScore = 0;
+  for(let i=0;i<num;i++){
+     
+   let tempHome = inning();
+   let tempAway = inning();
+    scoreArr.push(`Inning ${i+1}: Away ${tempHome} - Home ${tempAway}`)
+
+    console.log(`Inning ${i+1}: Away ${tempHome} - Home ${tempAway}`)
+    homeScore += tempHome;
+    awayScore +=tempAway;
+    }
+    if(homeScore>awayScore || awayScore>homeScore){
+      console.log(`Final Score: Away ${awayScore} - Home ${homeScore}`)
+    }else{
+      console.log(`This game will require extra innings: Away ${awayScore} - Home ${homeScore}`)
+    }
+
+    return scoreArr;
+
 }
+
+
 
 
 
