@@ -59,6 +59,8 @@ You will be running your tests in one terminal and debugging in the other. As yo
 Edit the `ReadMe` file with your answers to the questions below.
 
 1. In your own words, define closure (1-2 sentences).
+closure is the use of putting functions inside of other functions and how
+inner functions can reference elements of the outer functions.
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -80,9 +82,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+-closure is used when the function() console logs the name variable. 
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+- "dan rolled with a " is always the same.  Whereas the newroll can be different.
 c. What is the lexical scope of `newRoll`? 
-
+Only inside of the fucntion();
 
 ### Task 3 - Stretch Goals
 

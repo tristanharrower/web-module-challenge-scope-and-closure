@@ -28,11 +28,13 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
-  
+  counter1 uses closure whereas counter2 does not.
   2. Which of the two uses a closure? How can you tell?
-  
+  counter1 uses closure because the counter function is inside fo the countmaker function.
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+     counter1 is more preferabble if you are trying to limit the amount of global variables in a program.
+     counter2 is better for shorter programs.
 */
 
 // counter1 code
@@ -51,6 +53,10 @@ let count = 0;
 function counter2() {
   return count++;
 }
+
+
+
+
 
 
 /* ⚾️⚾️⚾️ Task 2: inning() ⚾️⚾️⚾️
